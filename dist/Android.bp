@@ -118,7 +118,7 @@ cc_library {
                 "liblog",
                 "libandroidicu",
             ],
-            cflags: ["-DSQLITE_ENABLE_ICU", "-Os"],
+            cflags: ["-DSQLITE_ENABLE_ICU"],
 
             // include android specific methods
             whole_static_libs: ["libsqlite3_android"],
@@ -147,6 +147,8 @@ cc_library {
         },
     },
     export_include_dirs: ["."],
+
+    afdo: true,
 }
 
 // This static library is variant of libsqlite built without the ICU extension.
