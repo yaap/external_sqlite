@@ -123,6 +123,10 @@ cc_library {
             // include android specific methods
             whole_static_libs: ["libsqlite3_android"],
         },
+        android_arm64: {
+            cflags: ["-fsplit-machine-functions"],
+            ldflags: ["-fsplit-machine-functions"],
+        },
         host: {
             static_libs: [
                 "liblog",
