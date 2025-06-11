@@ -57,6 +57,7 @@ cc_defaults {
         "-DSQLITE_POWERSAFE_OVERWRITE=1",
         "-DSQLITE_DEFAULT_FILE_FORMAT=4",
         "-DSQLITE_DEFAULT_AUTOVACUUM=1",
+        "-DSQLITE_ENABLE_DBSTAT_VTAB",
         "-DSQLITE_ENABLE_MEMORY_MANAGEMENT=1",
         "-DSQLITE_ENABLE_FTS3",
         "-DSQLITE_ENABLE_FTS3_BACKWARDS",
@@ -79,7 +80,7 @@ cc_defaults {
     ],
 
     target: {
-        linux_glibc: {
+        host_linux: {
             cflags: ["-DHAVE_POSIX_FALLOCATE=1"],
         },
     },
@@ -94,7 +95,6 @@ cc_defaults {
                 "-DUSE_PREAD64",
                 "-Dfdatasync=fdatasync",
                 "-DHAVE_MALLOC_H=1",
-                "-DSQLITE_ENABLE_DBSTAT_VTAB",
             ],
         },
     },
@@ -192,6 +192,7 @@ cc_library {
         "com.android.virt",
         "com.sdv.*",
     ],
+    min_sdk_version: "35",
 
     afdo: true,
     // libsqlite is a single gigantic C file, no need to run LTO.
@@ -215,7 +216,6 @@ cc_library_static {
     apex_available: [
         "//apex_available:platform",
         "com.android.os.statsd",
-        "test_com.android.os.statsd",
     ],
     min_sdk_version: "apex_inherit",
     host_supported: true,
