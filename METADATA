@@ -9,10 +9,10 @@ third_party {
   }
   url {
     type: ARCHIVE
-    value: "https://sqlite.org/src/tarball/d68fb8b5/SQLite-d68fb8b5.tar.gz"
+    value: "https://www.sqlite.org/2025/sqlite-autoconf-3500400.tar.gz"
   }
-  version: "3.44.3"
-  last_upgrade_date { year: 2024 month: 3 day: 25 }
+  version: "3.50.4"
+  last_upgrade_date { year: 2025 month: 7 day: 31 }
   license_type: NOTICE
 
   security: {
